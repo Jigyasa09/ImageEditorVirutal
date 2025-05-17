@@ -1,11 +1,11 @@
 /**
  * Creates and manages a canvas element
- * @param {string} canvasId - ID of the canvas element
+ * @param {string} canvasId 
  * @returns {Object} - Canvas utilities
  */
 export function createCanvas(canvasId) {
   const canvas = document.getElementById(canvasId);
-  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });    //for reading pixel data
   
   // Set initial canvas size
   canvas.width = canvas.clientWidth;
@@ -17,7 +17,6 @@ export function createCanvas(canvasId) {
    * @param {number} height - Canvas height
    */
   function setCanvasSize(width, height) {
-    // Don't resize if dimensions are the same (prevents flickering)
     if (canvas.width === width && canvas.height === height) return;
     
     canvas.width = width;
